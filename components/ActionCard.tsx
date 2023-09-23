@@ -3,6 +3,8 @@ import React from 'react';
 import {StyleSheet, View, Text, Linking, TouchableOpacity} from 'react-native';
 
 const ActionCard = () => {
+  
+
   function OpenWebsite(url: string) {
     Linking.openURL(url);
   }
