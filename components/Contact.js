@@ -37,15 +37,17 @@ export default function Contact() {
       <View>
         {Contacts.map(item => {
           return (
-            <View key={item.uid}>
-              <Text>{item.name}</Text>
+            <View key={item.uid} style={styles.contactBox}>
               <Image
                 source={{
                   uri: item.image,
                 }}
                 style={styles.image}
               />
-              <Text>{item.status}</Text>
+              <View>
+                <Text style={styles.UserName}>{item.name}</Text>
+                <Text>{item.status}</Text>
+              </View>
             </View>
           );
         })}
@@ -56,7 +58,7 @@ export default function Contact() {
 
 const styles = StyleSheet.create({
   heading: {
-    fontSize: 28,
+    fontSize: 40,
     fontWeight: 'bold',
   },
   container: {
@@ -65,5 +67,21 @@ const styles = StyleSheet.create({
   image: {
     height: 60,
     width: 60,
+    borderRadius: 30,
+  },
+  contactBox: {
+    // borderBlockColor: '#000',
+    // borderWidth: 2,
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+    marginBottom: 5,
+  },
+  UserName: {
+    color: '#000000',
+    fontFamily: 'lucida grande, tahoma, verdana, arial, sans-serif',
+    fontWeight: '600',
+    fontSize: 17,
   },
 });
